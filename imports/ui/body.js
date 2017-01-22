@@ -1,7 +1,10 @@
+
 import { Template } from 'meteor/templating';
 import { Comments } from '../api/comments.js';
 
 import './body.html';
+
+
 /* 見た目のあれこれ */
 $(document).ready(function(){
     $('.text-comment').autosize({append: null});
@@ -22,11 +25,12 @@ Template.body.events({
 
         // Get value from form element
         const textarea = $('.text-comment').val();
+        var moment = require("moment");
 
         // Insert a comment into the collection
         Comments.insert({
             textarea,
-            createdAt: new Date(), // current time
+            createdAt: moment().format("YYYY-MM-DD HH:mm:ss"), // current time
         });
 
         // Clear form
