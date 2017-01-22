@@ -2,6 +2,12 @@ import { Template } from 'meteor/templating';
 import { Comments } from '../api/comments.js';
 
 import './body.html';
+/* 見た目のあれこれ */
+$(document).ready(function(){
+    $('.text-comment').autosize({append: null});
+})
+
+/* コメント投稿 */
 
 Template.body.helpers({
     comments() {
@@ -10,23 +16,20 @@ Template.body.helpers({
 });
 
 Template.body.events({
-    'submit .new-comment'(event) {
+    'submit form'(event) {
         // Prevent default browser form submit
         event.preventDefault();
 
         // Get value from form element
-        const target = event.target;
-        const text = target.text.value;
-
-        console.log(Comments);
+        const textarea = $('.text-comment').val();
 
         // Insert a comment into the collection
         Comments.insert({
-            text,
+            textarea,
             createdAt: new Date(), // current time
         });
 
         // Clear form
-        target.text.value = '';
+        $('.text-comment').val('');
     },
 });

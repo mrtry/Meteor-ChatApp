@@ -1,6 +1,7 @@
 <body>
     <div class="info-area">
-        <h1>#knct-2016-02-06</h1>
+        <h1 class="">#Chat App</h1>
+        <p class="">よろしく…おなしゃァァァァァァァァァァァァァァアアアアアアアアアアアアアアアアアアアッッッ！！！</p>
     </div>
 
     <div class="show-comment-area">
@@ -10,13 +11,14 @@
     </div>
 
     <form class="post-comment-area">
-        <input type="text" name="text" placeholder="Sent to comments for #knct-2016-02-06" />
+        <textarea class="text-comment" placeholder=""></textarea>
+        <input type="submit" value="send">
     </form>
 </body>
 
 <template name="comment">
     <section class="comment-section">
-        {{text}}
+        {{textarea}}
         {{ createdAt }}
     </section>
 </template>
