@@ -1,11 +1,10 @@
 @charset 'UTF-8';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
-/* color */
-$white: #fff;
-$green: #98d98e;
+// color
+$question: #ee7800;
 $gray-lighter: #f3f3f3;
-$grape: #915c8b;
+$info-area-background: #3eb370;
 
 html {
   height: 100%;
@@ -16,7 +15,7 @@ body {
   margin: 0;
 }
 
-.wrapper{
+.wrapper {
   height: 100%;
   width: 100%;
 
@@ -26,25 +25,28 @@ body {
 }
 
 .info-area {
-  background-color: $grape;
+  background-color: $info-area-background;
   border-bottom: solid 1px $gray-lighter;
-  height: 35px;
+  height: 40px;
   padding: 2%;
   width: 100%;
 
-  h1 {
-    color: $white;
+  .header {
+    color: white;
     font-size: $font-size-large;
-    margin-top: 0;
+    font-weight: bold;
   }
 
-  p {
-    color: $white;
+  .header-comment {
+    color: white;
+    font-size: $font-size-small;
+    margin-left: 5px;
   }
 }
 
 .show-comment-area {
-  height: calc(100% - 33px - 35px);
+  -webkit-overflow-scrolling: touch;
+  height: calc(100% - 33px - 40px);
   overflow: scroll;
 
   .section-comment {
@@ -53,6 +55,11 @@ body {
     &:nth-child(even) {
       background-color: $gray-lighter;
     }
+  }
+
+  .question {
+    color: $question;
+    font-weight: bold;
   }
 }
 

@@ -1,7 +1,8 @@
 <body>
     <div class="wrapper">
         <div class="info-area">
-            <h1 class="">#chat-app</h1>
+          <span class="header">#chat-app</span>
+          <span class="header-comment">- 質問あったら<strong>「Q.」</strong>をつけてね！ -</span>
         </div>
 
         <div class="show-comment-area">
@@ -20,8 +21,8 @@
 </body>
 
 <template name="comment">
-    <section class="section-comment">
-      <p>{{comment}}</p>
-      <p class="text-muted small">{{ createdAt }}</p>
-    </section>
+  <section class="section-comment">
+    <p class="{{ tag }}">{{ comment }}</p>
+    <p class="text-muted small">{{ createdAt }}</p>
+  </section>
 </template>

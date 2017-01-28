@@ -12,17 +12,17 @@ Template.body.helpers({
 
 Template.body.events({
     'submit form'(event) {
-        // Prevent default browser form submit
         event.preventDefault();
 
-        // Get value from form element
-        const comment = $('.post-comment').val();
         var moment = require("moment");
+        const comment = $('.post-comment').val();
+        const tag = comment.match(/Q\./) ? 'question' : '';
 
         // Insert a comment into the collection
         if (comment.length > 0) {
           Comments.insert({
               comment,
+              tag,
               createdAt: moment().format("YYYY-MM-DD HH:mm:ss"), // current time
           });
 
