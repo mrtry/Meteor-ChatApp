@@ -1,24 +1,27 @@
 <body>
-    <div class="info-area">
-        <h1 class="">#Chat App</h1>
-        <p class="">よろしく…おなしゃァァァァァァァァァァァァァァアアアアアアアアアアアアアアアアアアアッッッ！！！</p>
-    </div>
+    <div class="wrapper">
+        <div class="info-area">
+            <h1 class="">#chat-app</h1>
+        </div>
 
-    <div class="show-comment-area">
-        {{ #each comments }}
-        {{ > comment }}
-        {{ /each }}
-    </div>
+        <div class="show-comment-area">
+            {{ #each comments }}
+            {{ > comment }}
+            {{ /each }}
+        </div>
 
-    <form class="post-comment-area">
-        <textarea class="text-comment" placeholder=""></textarea>
-        <input type="submit" value="send">
-    </form>
+        <div class="post-comment-area">
+          <form>
+              <input class="post-comment" placeholder="Message send to #chat-app" />
+              <button class="btn" type="submit" value="send">Send</button>
+          </form>
+        </div>
+    </div>
 </body>
 
 <template name="comment">
-    <section class="comment-section">
-        {{textarea}}
-        {{ createdAt }}
+    <section class="section-comment">
+      <p>{{comment}}</p>
+      <p class="text-muted small">{{ createdAt }}</p>
     </section>
 </template>

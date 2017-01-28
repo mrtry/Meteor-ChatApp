@@ -1,20 +1,12 @@
-
 import { Template } from 'meteor/templating';
 import { Comments } from '../api/comments.js';
 
 import './body.html';
 
-
-/* 見た目のあれこれ */
-$(document).ready(function(){
-    $('.text-comment').autosize({append: null});
-})
-
 /* コメント投稿 */
-
 Template.body.helpers({
     comments() {
-        return Comments.find({});
+        return Comments.find({}, { sort: { createdAt: -1 }});
     },
 });
 
@@ -24,16 +16,18 @@ Template.body.events({
         event.preventDefault();
 
         // Get value from form element
-        const textarea = $('.text-comment').val();
+        const comment = $('.post-comment').val();
         var moment = require("moment");
 
         // Insert a comment into the collection
-        Comments.insert({
-            textarea,
-            createdAt: moment().format("YYYY-MM-DD HH:mm:ss"), // current time
-        });
+        if (comment.length > 0) {
+          Comments.insert({
+              comment,
+              createdAt: moment().format("YYYY-MM-DD HH:mm:ss"), // current time
+          });
 
-        // Clear form
-        $('.text-comment').val('');
+          // Clear form
+          $('.post-comment').val('');
+        }
     },
 });

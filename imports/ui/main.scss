@@ -1,6 +1,73 @@
 @charset 'UTF-8';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
-section {
-    border-bottom: medium solid #ff00ff;
+/* color */
+$white: #fff;
+$green: #98d98e;
+$gray-lighter: #f3f3f3;
+$grape: #915c8b;
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+
+  p {
+    margin: 0;
+  }
+}
+
+.info-area {
+  background-color: $grape;
+  border-bottom: solid 1px $gray-lighter;
+  height: 35px;
+  padding: 2%;
+  width: 100%;
+
+  h1 {
+    color: $white;
+    font-size: $font-size-large;
+    margin-top: 0;
+  }
+
+  p {
+    color: $white;
+  }
+}
+
+.show-comment-area {
+  height: calc(100% - 33px - 35px);
+  overflow: scroll;
+
+  .section-comment {
+    padding: 0 2%;
+
+    &:nth-child(even) {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+.post-comment-area {
+  border: solid 1px $gray-lighter;
+  height: 33px;
+  position: fixed;
+  width: 100%;
+
+  .post-comment {
+    width: calc(100% - 62px);
+  }
+
+  .btn {
+    height: 100%;
+    width: 58px;
+  }
 }
