@@ -5822,7 +5822,10 @@ body {
   margin: 0; }
 
 .wrapper {
+  border: solid 1px #f3f3f3;
   height: 100%;
+  margin: 0 auto;
+  max-width: 950px;
   width: 100%; }
   .wrapper p {
     margin: 0; }
@@ -5830,8 +5833,7 @@ body {
 .info-area {
   background-color: #3eb370;
   border-bottom: solid 1px #f3f3f3;
-  height: 40px;
-  padding: 2%;
+  padding: 1% 2%;
   width: 100%; }
   .info-area .header {
     color: white;
@@ -5857,6 +5859,7 @@ body {
 .post-comment-area {
   border: solid 1px #f3f3f3;
   height: 33px;
+  max-width: 950px;
   position: fixed;
   width: 100%; }
   .post-comment-area .post-comment {
