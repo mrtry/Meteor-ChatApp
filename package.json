@@ -2,7 +2,7 @@
   "name": "ChatApp",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "meteor": "meteor --settings settings.json",
     "build-css": "node-sass --include-path scss imports/ui/main.scss client/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
